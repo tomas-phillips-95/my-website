@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon -e ts -w . -x ts-node ./src/api/server",
     "build": "tsc",
-    "vercel-build": "tsc && tsc-alias"
+    "vercel-build": "tsc && tsc-alias && mkdir dist/public"
   },
   "keywords": [],
   "author": "",
