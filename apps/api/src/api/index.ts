@@ -5,4 +5,4 @@ import { app } from "./server";
 dotenv.config();
 
 export type { AppRouter } from "./router";
-export { app };
+export default app;
