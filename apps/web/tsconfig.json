@@ -10,7 +10,7 @@
     "module": "esnext",
     "strict": true,
     "paths": {
-      "api": ["../api/src/api"],
+      "api": ["../api/src"],
       "@/*": ["./src/*"]
     }
   },
