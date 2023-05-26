@@ -4,8 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "nodemon -e ts -w . -x ts-node ./src/api/server",
-    "build": "tsc",
-    "vercel-build": "echo hello"
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
