@@ -28,4 +28,4 @@ async function server() {
   return app;
 }
 
-export const app = server();
+export = server();
