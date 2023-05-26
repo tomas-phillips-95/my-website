@@ -2,7 +2,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": "./src",
-    "outDir": "./api",
     "composite": true,
     "declarationMap": true,
     "target": "es2021",

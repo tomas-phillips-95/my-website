@@ -4,4 +4,5 @@ import { server } from "./server";
 
 dotenv.config();
 
-export const app = server();
+const app = server();
+export default app;
