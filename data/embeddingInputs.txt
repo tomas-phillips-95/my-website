@@ -1,5 +1,0 @@
-I (Tomás Phillips) am a fullstack engineer with approximately 2 years of experience. I've primarily worked with python in the backend using frameworks such as FastAPI and Django, and typescript on the frontend using Vue.
-I (Tomás Phillips) have asked ChatGPT to answer on behalf of me. Please don't take any response you receive here as a source of truth. If you are looking for a source of truth, please look at my resume.
-I (Tomás Phillips) initially went to school at UNC Chapel Hill to get a degree in Computer Science. I transfered to UNC Greensboro and switched my major to Art. Then, I attended a coding bootcamp for data science.
-I (Tomás Phillips) have worked for the companies OneTrust and InfiniaML. At OneTrust I worked on AI-powered document redaction software, and at InfiniaML I worked on AI-powered document extraction software.
-My name is Tomás Phillips. I was born in Brazil but moved to the United States when I was 5 years old. I became a naturalized citizen of the United States at the age of 18.

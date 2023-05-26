@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply appearance-none outline-none;
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+}
+
+*:focus {
+  @apply appearance-none outline-none;
+}
+
+body, #app {
+  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+}

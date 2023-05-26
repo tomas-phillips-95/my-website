@@ -1,0 +1,21 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "composite": true,
+    "declarationMap": true,
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "paths": {
+      "api": ["../api/src/api"],
+      "@/*": ["./src/*"]
+    }
+  },
+  "files": ["./shims-vue.d.ts"],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "exclude": ["node_modules", "dist"],
+  "references": [{ "path": "../api" }]
+}
