@@ -92,7 +92,6 @@ function sleep(ms: number) {
 const isQuestionElHoveredWithDelayAtEnd = computedAsync(
   async () => {
     if (!isQuestionElHovered.value) {
-      console.log("sleeping");
       await sleep(300);
     }
     return isQuestionElHovered.value;
