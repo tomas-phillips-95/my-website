@@ -25,7 +25,10 @@ async function server() {
       createContext,
     })
   );
+  app.listen(5000, () => {
+    console.log("Running on port 5000.");
+  });
   return app;
 }
 
-export const app = server();
+export = server();
