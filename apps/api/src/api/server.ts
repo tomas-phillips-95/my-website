@@ -31,4 +31,4 @@ async function server() {
   return app;
 }
 
-export = server();
+export { server };
