@@ -9,7 +9,11 @@ import { db } from "@/modules";
 
 async function server() {
   const app = express();
-  app.use(cors());
+  app.use(
+    cors({
+      origin: process.env.MY_WEBSITE_ORIGIN,
+    })
+  );
   app.use(async (_req: Request, _res: Response, next) => {
     db.connect();
     next();
