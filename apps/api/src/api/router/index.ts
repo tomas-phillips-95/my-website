@@ -1,7 +1,7 @@
 import { chatRouter } from "./chat";
 import { embeddingsRouter } from "./embeddings";
 
-import { router } from "@/api/trpc";
+import { router } from "../trpc";
 
 export const appRouter = router({
   chat: chatRouter,

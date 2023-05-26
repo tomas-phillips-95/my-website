@@ -5,7 +5,7 @@ import cors from "cors";
 import { appRouter } from "./router";
 import { createContext } from "./trpc";
 
-import { db } from "@/modules";
+import { db } from "../modules";
 
 async function server() {
   const app = express();

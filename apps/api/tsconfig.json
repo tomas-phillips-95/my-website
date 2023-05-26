@@ -10,9 +10,6 @@
     "esModuleInterop": true,
     "strict": true,
     "lib": ["es2021", "dom"],
-    "paths": {
-      "@/*": ["./src/*"],
-    },
   },
   "include": ["env.d.ts", "src/**/*"],
   "exclude": ["node_modules", "dist"],

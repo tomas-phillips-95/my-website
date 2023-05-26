@@ -1,7 +1,7 @@
 import { z } from "zod";
 
-import { publicProcedure, router } from "@/api/trpc";
-import { db, chat } from "@/modules";
+import { publicProcedure, router } from "../trpc";
+import { db, chat } from "../../modules";
 
 const Prompt = z.string().min(3).max(240);
 
