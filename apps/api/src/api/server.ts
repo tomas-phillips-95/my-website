@@ -25,9 +25,6 @@ async function server() {
       createContext,
     })
   );
-  app.listen(2021, () => {
-    console.log("listening on port 2021");
-  });
   return app;
 }
 
