@@ -34,7 +34,7 @@ useIntervalFn(() => {
     <DefineLink v-slot="{ text, href }">
       <a
         target="_blank"
-        class="transition underline hover:bg-white hover:shadow-[0_0_15px_15px_white] inline-block rounded-[100%] duration-500"
+        class="transition underline text-black font-medium hover:bg-white hover:shadow-[0_0_15px_15px_white] inline-block rounded-[100%] duration-500"
         :href="href"
       >
         {{ text }}
@@ -102,7 +102,7 @@ useIntervalFn(() => {
       <div class="space-y-4">
         <h1 class="text-black flex">
           <ReuseLink
-            text="My previous, previous website, website"
+            text="My previous, my previous website, website"
             href="https://sugar-water.github.io/"
           />
           <a

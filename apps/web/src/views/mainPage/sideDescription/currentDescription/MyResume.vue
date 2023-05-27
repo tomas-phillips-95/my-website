@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { createReusableTemplate } from "@vueuse/core";
 
+import pdfUrl from "@/assets/resume.pdf";
+
 const [DefineListItem, ReuseListItem] = createReusableTemplate<{
   text: string;
 }>();
@@ -12,7 +14,7 @@ const [DefineLink, ReuseLink] = createReusableTemplate<{
 </script>
 
 <template>
-  <div class="flex flex-col space-y-2 max-w-[64rem]">
+  <div class="flex flex-col space-y-8 max-w-[64rem]">
     <DefineListItem v-slot="{ text }">
       <li class="text-xs">{{ text }}</li>
     </DefineListItem>
@@ -27,13 +29,13 @@ const [DefineLink, ReuseLink] = createReusableTemplate<{
       </a>
     </DefineLink>
 
-    <div class="text-gray-700 max-w-[42rem] space-y-4 text-sm">
-      For a more official PDF version, click this
-      <ReuseLink text="link." href="https://sugar-water.github.io/" />
+    <div class="text-gray-700 text-xs">
+      For a PDF version of this, click
+      <ReuseLink text="here" :href="pdfUrl" />
     </div>
 
     <div class="flex flex-col">
-      <h3>Tools I've Worked With:</h3>
+      <h3 class="font-medium">Tools I've Worked With:</h3>
       <ul>
         <ReuseListItem text="Python" />
         <ReuseListItem text="Typescript" />
@@ -43,18 +45,22 @@ const [DefineLink, ReuseLink] = createReusableTemplate<{
         <ReuseListItem text="Kubernetes" />
         <ReuseListItem text="Elasticsearch" />
         <ReuseListItem text="Postgres" />
+        <ReuseListItem text="MongoDB" />
         <ReuseListItem text="Keycloak" />
         <ReuseListItem text="AWS" />
       </ul>
     </div>
     <div class="space-y-2">
-      <h3>Experience:</h3>
+      <h3 class="font-medium">Experience:</h3>
       <div>
         <h4>
-          InfiniaML, Durham NC —
-          <span class="text-sm text-gray-600 italic">Software Engineer</span>
+          Infinia ML, <span class="text-sm">Durham NC</span> —
+          <span class="text-sm text-black font-medium">Software Engineer</span>
         </h4>
-        <ul class="list-disc text-gray-700">
+        <span class="uppercase text-xs text-gray-500 ml-4"
+          >March 2022 → Present</span
+        >
+        <ul class="list-disc text-gray-700 ml-4">
           <li class="text-sm">
             Developed and maintained a user management system using Python
             (backend) and Vue 3 with TypeScript (frontend).
@@ -72,10 +78,13 @@ const [DefineLink, ReuseLink] = createReusableTemplate<{
       </div>
       <div>
         <h4>
-          OneTrust, Remote —
-          <span class="text-sm text-gray-600 italic">Python Developer</span>
+          OneTrust, <span class="text-sm">Remote</span> —
+          <span class="text-sm text-black font-medium">Python Developer</span>
         </h4>
-        <ul class="list-disc text-gray-700">
+        <span class="uppercase text-xs text-gray-500 ml-4"
+          >June 2021 → March 2022</span
+        >
+        <ul class="list-disc text-gray-700 ml-4">
           <li class="text-sm">
             Developed and optimized backend document redaction software
             utilizing FastAPI.
@@ -97,10 +106,15 @@ const [DefineLink, ReuseLink] = createReusableTemplate<{
       </div>
       <div>
         <h4>
-          Wine & Design, Greensboro NC —
-          <span class="text-sm text-gray-600 italic">Painting Instructor</span>
+          Wine & Design, <span class="text-sm">Greensboro NC</span> —
+          <span class="text-sm text-black font-medium"
+            >Painting Instructor</span
+          >
         </h4>
-        <ul class="list-disc text-gray-700">
+        <span class="uppercase text-xs text-gray-500 ml-4"
+          >January 2019 → March 2020</span
+        >
+        <ul class="list-disc text-gray-700 ml-4">
           <li class="text-sm">
             Instructed acrylic painting classes for adults and children. Classes
             ranged from 4 to 35+ people in count.
@@ -109,18 +123,82 @@ const [DefineLink, ReuseLink] = createReusableTemplate<{
       </div>
       <div>
         <h4>
-          Volvo Trucks, Greensboro NC —
-          <span class="text-sm text-gray-600 italic"
+          Volvo Trucks, <span class="text-sm">Greensboro NC</span> —
+          <span class="text-sm text-black font-medium"
             >Software Engineer Intern</span
           >
         </h4>
-        <ul class="list-disc text-gray-700">
+        <span class="uppercase text-xs text-gray-500 ml-4"
+          >June 2016 → August 2016</span
+        >
+        <ul class="list-disc text-gray-700 ml-4">
           <li class="text-sm">
             Developed an elegant Electron application utilizing HTML documents,
             effectively extracting and organizing data from Microsoft Word
             documents. Leveraged web technologies to create a dynamic and
             referential catalog of these documents, offering enhanced
             accessibility and seamless navigation.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="space-y-2">
+      <h3 class="font-medium">Education:</h3>
+      <div>
+        <h4>
+          Lambda School, <span class="text-sm">Remote</span> —
+          <span class="text-sm text-black font-medium">Data Science</span>
+        </h4>
+        <span class="uppercase text-xs text-gray-500 ml-4"
+          >August 2020 → February 2021</span
+        >
+        <ul class="list-disc text-gray-700 ml-4">
+          <li class="text-sm">
+            An intensive 8 hour per day, 6 month-long program focusing on data
+            science and machine learning.
+          </li>
+          <li class="text-sm">
+            Worked on various group projects, including a month-long project for
+            the non-profit Human Rights First Asylum.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4>
+          University of North Carolina at Greensboro,
+          <span class="text-sm">Greensboro NC</span> —
+          <span class="text-sm text-black font-medium">Studio Art</span>
+        </h4>
+        <span class="uppercase text-xs text-gray-500 ml-4"
+          >August 2017 → June 2019</span
+        >
+        <ul class="list-disc text-gray-700 ml-4">
+          <li class="text-sm">
+            Took various classes such as drawing, life-drawing, painting,
+            design, and more.
+          </li>
+          <li class="text-sm">
+            Played soprano/alto saxophone in the North Carolina Saxophone
+            Ensemble.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4>
+          University of North Carolina at Chapel Hill,
+          <span class="text-sm">Chapel Hill NC</span> —
+          <span class="text-sm text-black font-medium">Computer Science</span>
+        </h4>
+        <span class="uppercase text-xs text-gray-500 ml-4"
+          >August 2013 → June 2017</span
+        >
+        <ul class="list-disc text-gray-700 ml-4">
+          <li class="text-sm">
+            Took various classes such as foundations of programming, discrete
+            math, web fundamentals, and more.
+          </li>
+          <li class="text-sm">
+            Played alto saxophone in the university’s wind ensemble.
           </li>
         </ul>
       </div>
