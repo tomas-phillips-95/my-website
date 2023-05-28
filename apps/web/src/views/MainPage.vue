@@ -17,7 +17,9 @@ useTitle("Tomás Phillips");
     <div
       class="flex flex-1 space-x-6 justify-between flex-wrap overscroll-none md:overflow-y-auto mr-6 md:mr-0 bg-gray-200 z-10 md:bg-transparent md:z-auto"
     >
-      <SideDescription class="flex-1 min-w-[18rem] max-w-[56rem] h-min pr-6" />
+      <SideDescription
+        class="flex-1 min-w-[18rem] max-w-[56rem] h-min pr-0 md:pr-6"
+      />
       <ChatApp class="flex-1 min-w-[18rem] max-w-[42 rem] mt-8 md:mt-0" />
     </div>
   </div>
