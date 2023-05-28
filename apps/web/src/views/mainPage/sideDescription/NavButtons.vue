@@ -1,15 +1,10 @@
 <script setup lang="ts">
-import { useBreakpoints, breakpointsTailwind } from "@vueuse/core";
-
 import { useInjectSideDescriptionStore } from "@/composables/sideDescriptionStore";
 import FunButton from "@/components/FunButton.vue";
 import { useInteractionsStore } from "@/composables/interactionsStore";
 
 const { selectedButton, getButtonText } = useInjectSideDescriptionStore()!;
 const { addNewInteraction } = useInteractionsStore();
-
-const breakpoints = useBreakpoints(breakpointsTailwind);
-const largerThanSm = breakpoints.greater("sm");
 </script>
 
 <template>
@@ -33,8 +28,7 @@ const largerThanSm = breakpoints.greater("sm");
       @click="selectedButton = 'my-resume'"
     />
     <FunButton
-      v-if="largerThanSm"
-      class="bg-purple-400 text-black hover:bg-purple-300 hover:text-black shadow hover:shadow-none"
+      class="bg-purple-400 text-black hover:bg-purple-300 hover:text-black shadow hover:shadow-none hidden md:block"
       text="+ ?"
       direction="ltr"
       @click="addNewInteraction()"

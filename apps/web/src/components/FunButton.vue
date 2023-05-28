@@ -38,10 +38,7 @@ const isMobile = useIsMobile();
     <div
       class="relative mx-3 my-2 group-hover:my-3 inline-block transition-all duration-300"
     >
-      <div
-        :class="isMobile ? '' : isOutsideButton ? '' : 'invisible'"
-        class="text-xs md:text-base"
-      >
+      <div :class="isMobile ? '' : isOutsideButton ? '' : 'invisible'">
         {{ text }}
       </div>
       <div v-if="!isMobile && !isOutsideButton">
@@ -52,7 +49,7 @@ const isMobile = useIsMobile();
           :total="totalWords"
           :text="text"
           :direction="direction"
-          class="absolute top-0 text-xs md:text-base"
+          class="absolute top-0"
         >
           {{ text }}
         </MovingBit>
