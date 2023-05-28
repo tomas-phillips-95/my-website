@@ -102,7 +102,7 @@ useIntervalFn(() => {
       <div class="space-y-4">
         <h1 class="text-black flex">
           <ReuseLink
-            text="My previous, my previous website, website"
+            text="My previous, My previous website, website"
             href="https://sugar-water.github.io/"
           />
           <a
