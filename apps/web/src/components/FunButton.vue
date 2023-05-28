@@ -4,6 +4,8 @@ import { ref, computed } from "vue";
 
 import MovingBit from "./funButton/MovingBit.vue";
 
+import { useIsMobile } from "@/composables/isMobile";
+
 const props = withDefaults(
   defineProps<{
     text: string;
@@ -24,6 +26,8 @@ const { isOutside: isOutsideButton } = useMouseInElement(button, {
 const multi = computed(() =>
   Array.from({ length: props.totalWords }, (_, i) => i - props.totalWords / 2)
 );
+
+const isMobile = useIsMobile();
 </script>
 
 <template>
@@ -35,12 +39,12 @@ const multi = computed(() =>
       class="relative mx-3 my-2 group-hover:my-3 inline-block transition-all duration-300"
     >
       <div
-        :class="isOutsideButton ? '' : 'invisible'"
+        :class="isMobile ? '' : isOutsideButton ? '' : 'invisible'"
         class="text-xs md:text-base"
       >
         {{ text }}
       </div>
-      <div v-if="!isOutsideButton">
+      <div v-if="!isMobile && !isOutsideButton">
         <MovingBit
           v-for="(m, index) in multi"
           :key="index"
