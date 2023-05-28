@@ -12,10 +12,10 @@ useTitle("Tomás Phillips");
 </script>
 
 <template>
-  <div class="bg-gray-200 h-full flex flex-col overscroll-y-auto">
-    <HeaderStuff class="flex-initial px-6 pt-6 pb-2 md:pb-4" />
+  <div class="h-full flex flex-col">
+    <HeaderStuff class="flex-initial px-6 pt-6 pb-2 md:pb-4 sticky top-0" />
     <div
-      class="flex flex-1 space-x-6 justify-between flex-wrap overflow-y-auto mr-6 md:mr-0"
+      class="flex flex-1 space-x-6 justify-between flex-wrap overscroll-none md:overflow-y-auto mr-6 md:mr-0 bg-gray-200 sm:bg-transparent"
     >
       <SideDescription class="flex-1 min-w-[18rem] max-w-[56rem] h-min" />
       <ChatApp class="flex-1 min-w-[18rem] max-w-[42 rem] mt-8 md:mt-0" />
