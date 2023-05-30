@@ -1,15 +1,10 @@
 <script setup lang="ts">
-import { createReusableTemplate } from "@vueuse/core";
+import { track } from "@vercel/analytics";
 
 import WorkItem from "./MyResume/WorkItem.vue";
 import EducationItem from "./MyResume/EducationItem.vue";
 
 import pdfUrl from "@/assets/resume.pdf";
-
-const [DefineLink, ReuseLink] = createReusableTemplate<{
-  text: string;
-  href: string;
-}>();
 
 const work = [
   {
@@ -108,23 +103,23 @@ const knownTools = [
   "Keycloak",
   "AWS",
 ];
+
+function logResumePdfClick() {
+  track("ResumePDFClicked");
+}
 </script>
 
 <template>
   <div class="flex flex-col space-y-8 max-w-[64rem]">
-    <DefineLink v-slot="{ text, href }">
-      <a
-        target="_blank"
-        class="transition underline hover:bg-white hover:shadow-[0_0_15px_15px_white] inline-block rounded-[100%] duration-500"
-        :href="href"
-      >
-        {{ text }}
-      </a>
-    </DefineLink>
-
-    <div class="text-gray-700 text-sm">
+    <div class="text-gray-800 text-sm">
       For a PDF version of this, click
-      <ReuseLink text="here" :href="pdfUrl" />
+      <a
+        :href="pdfUrl"
+        target="_blank"
+        class="transition text-black underline hover:bg-white hover:shadow-[0_0_15px_15px_white] inline-block rounded-[100%] duration-500"
+        @click="logResumePdfClick()"
+        >here</a
+      >.
     </div>
 
     <div class="flex flex-col">
