@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, type Component } from "vue";
 
-import MyProjects from "./currentDescription/MyProjects.vue";
-import MyResume from "./currentDescription/MyResume.vue";
-import AboutMe from "./currentDescription/AboutMe.vue";
+import MyProjects from "./currentContent/MyProjects.vue";
+import MyResume from "./currentContent/MyResume.vue";
+import AboutMe from "./currentContent/AboutMe.vue";
 
-import { useInjectSideDescriptionStore } from "@/composables/sideDescriptionStore";
+import { useNav } from "@/composables";
 
-const { selectedButton } = useInjectSideDescriptionStore()!;
+const { currentNav } = useNav();
 
-function getComponent() {
-  switch (selectedButton.value) {
-    case "about-me":
+function getComponent(): Component {
+  switch (currentNav.value) {
+    case "AboutMe":
       return AboutMe;
-    case "my-resume":
+    case "MyResume":
       return MyResume;
-    case "my-projects":
+    case "MyProjects":
       return MyProjects;
   }
 }

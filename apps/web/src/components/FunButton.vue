@@ -27,7 +27,7 @@ const multi = computed(() =>
   Array.from({ length: props.totalWords }, (_, i) => i - props.totalWords / 2)
 );
 
-const isMobile = useIsMobile();
+const { isMobile } = useIsMobile();
 </script>
 
 <template>

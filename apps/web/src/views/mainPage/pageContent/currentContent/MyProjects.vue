@@ -34,7 +34,7 @@ useIntervalFn(() => {
     <DefineLink v-slot="{ text, href }">
       <a
         target="_blank"
-        class="transition underline text-black font-medium hover:bg-white hover:shadow-[0_0_15px_15px_white] inline-block rounded-[100%] duration-500"
+        class="transition underline text-black text-base font-medium hover:bg-white hover:shadow-[0_0_15px_15px_white] inline-block rounded-[100%] duration-500"
         :href="href"
       >
         {{ text }}
@@ -83,7 +83,7 @@ useIntervalFn(() => {
           coordinates of each face's eyes and mouth. Then, I used those
           coordinates to crop the images in the right spots.
         </p>
-        <p class="text-xs max-w-[64%]">
+        <p class="text-sm max-w-[64%]">
           This website also hosts a more
           <ReuseLink
             text="comprehensive portfolio"

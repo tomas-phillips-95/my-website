@@ -2,7 +2,7 @@
 import { useTitle } from "@vueuse/core";
 
 import ChatApp from "./mainPage/ChatApp.vue";
-import SideDescription from "./mainPage/SideDescription.vue";
+import PageContent from "./mainPage/PageContent.vue";
 import HeaderStuff from "./mainPage/HeaderStuff.vue";
 
 import { useDimmerState } from "@/composables/dimmer";
@@ -12,15 +12,11 @@ useTitle("Tomás Phillips");
 </script>
 
 <template>
-  <div class="h-full flex flex-col">
-    <HeaderStuff class="flex-initial px-6 pt-6 pb-2 md:pb-4 sticky top-0" />
-    <div
-      class="flex flex-1 space-x-6 justify-between flex-wrap overscroll-none md:overflow-y-auto mr-6 md:mr-0 bg-gray-200 z-10 md:bg-transparent md:z-auto"
-    >
-      <SideDescription
-        class="flex-1 min-w-[18rem] max-w-[56rem] h-min pr-0 md:pr-6"
-      />
-      <ChatApp class="flex-1 min-w-[18rem] max-w-[42 rem] mt-8 md:mt-0" />
+  <div class="flex flex-col p-6">
+    <HeaderStuff class="flex-initial pb-3" />
+    <div class="flex flex-1 bg-gray-200 pt-3">
+      <PageContent class="flex-1 max-w-[56rem]" />
+      <ChatApp />
     </div>
   </div>
   <div class="opacity-20">

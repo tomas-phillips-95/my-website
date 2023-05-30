@@ -11,8 +11,7 @@ import {
 import { useProjection } from "@vueuse/math";
 import { computed, ref } from "vue";
 
-import { useDotDotDot } from "@/composables/dotDotDot";
-import { useDimmer } from "@/composables/dimmer";
+import { useDotDotDot, useDimmer } from "@/composables";
 import FunButton from "@/components/FunButton.vue";
 import {
   useInteractionsStore,
@@ -118,7 +117,7 @@ const { dotDotDot } = useDotDotDot(isLoadingResponse);
     <div
       v-show="true"
       ref="questionEl"
-      class="px-4 pb-4 pt-2 flex flex-col bg-[#e5e7eb] w-80 shadow-lg absolute space-y-2 rounded-lg border-2 border-gray-500"
+      class="px-4 pb-4 pt-2 flex flex-col bg-[#e5e7eb] w-96 shadow-lg absolute space-y-2 rounded-lg border-2 border-gray-500"
       :class="{
         'z-50':
           isQuestionElHoveredWithDelayAtEnd || isAnswerElHoveredWithDelayAtEnd,
@@ -128,16 +127,14 @@ const { dotDotDot } = useDotDotDot(isLoadingResponse);
       <div class="flex space-x-2">
         <div
           ref="questionHandle"
-          class="self-center flex-1 select-none flex mx-2 hover:cursor-move space-x-2 items-center"
+          class="self-center flex-1 select-none flex mx-2 hover:cursor-move space-x-2 items-center text-base"
         >
           <span class="tracking-wide">::</span>
-          <span
-            v-if="interaction.state === 'composing-question'"
-            class="text-sm"
+          <span v-if="interaction.state === 'composing-question'"
             >Ask a question</span
-          ><span v-else-if="interaction.state === 'pending'" class="text-sm"
+          ><span v-else-if="interaction.state === 'pending'"
             >Getting response{{ dotDotDot }}</span
-          ><span v-else class="text-sm">Question answered!</span>
+          ><span v-else>Question answered!</span>
         </div>
         <FunButton
           text="send"
@@ -186,7 +183,7 @@ const { dotDotDot } = useDotDotDot(isLoadingResponse);
           class="flex-1 select-none flex mx-2 hover:cursor-move space-x-2 items-center"
         >
           <span class="tracking-wide">::</span>
-          <span class="text-sm">Response</span>
+          <span class="text-base">Response</span>
         </div>
         <p
           v-if="'answer' in interaction"
