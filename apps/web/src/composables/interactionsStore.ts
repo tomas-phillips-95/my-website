@@ -1,6 +1,7 @@
 import { computed, ref, type Ref } from "vue";
 import { nanoid } from "nanoid";
 import { useAsyncState, isDefined, createGlobalState } from "@vueuse/core";
+import { track } from "@vercel/analytics";
 
 import { client } from "@/client";
 
@@ -85,6 +86,7 @@ export const useInteractionsStore = createGlobalState(() => {
       useAsyncState(
         async () => {
           updateInteractionAsPending(interaction.value.id);
+          track("QuestionAsked", { input: interaction.value.question });
           const resp = await client.chat.getChatResponse.mutate(
             interaction.value.question
           );
