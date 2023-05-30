@@ -1,17 +1,21 @@
 <script setup lang="ts">
 import { computed, type UnwrapRef } from "vue";
+import { until, useWindowScroll } from "@vueuse/core";
 
 import FunButton from "@/components/FunButton.vue";
-import { useInteractionsStore } from "@/composables/interactionsStore";
-import { useNav, useIsMobile } from "@/composables";
-
+import { useNav, useIsMobile, useInteractionsStore } from "@/composables";
 const { currentNav } = useNav();
 const { isMobile } = useIsMobile();
 const { addNewInteraction } = useInteractionsStore();
 
+type Nav = UnwrapRef<typeof currentNav>;
+
+const { y: scrollY } = useWindowScroll();
+const isScrollTop = computed(() => scrollY.value === 0);
+
 const getButtonText = computed(() => {
   return isMobile.value
-    ? (nav: UnwrapRef<typeof currentNav>) => {
+    ? (nav: Nav) => {
         let text: string;
         switch (nav) {
           case "AboutMe":
@@ -26,7 +30,7 @@ const getButtonText = computed(() => {
         }
         return nav === currentNav.value ? text.toUpperCase() : text;
       }
-    : (nav: UnwrapRef<typeof currentNav>) => {
+    : (nav: Nav) => {
         let text: string;
         switch (nav) {
           case "AboutMe":
@@ -42,6 +46,12 @@ const getButtonText = computed(() => {
         return nav === currentNav.value ? text.toUpperCase() : text;
       };
 });
+
+async function setNav(nav: Nav) {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  await until(isScrollTop).toBe(true);
+  currentNav.value = nav;
+}
 </script>
 
 <template>
@@ -50,19 +60,19 @@ const getButtonText = computed(() => {
       class="bg-green-400 text-black hover:bg-green-300 hover:text-black shadow hover:shadow-none"
       :text="getButtonText('AboutMe')"
       direction="rtl"
-      @click="currentNav = 'AboutMe'"
+      @click="setNav('AboutMe')"
     />
     <FunButton
       class="bg-yellow-400 text-black hover:bg-yellow-300 hover:text-black shadow hover:shadow-none"
       :text="getButtonText('MyProjects')"
       direction="ltr"
-      @click="currentNav = 'MyProjects'"
+      @click="setNav('MyProjects')"
     />
     <FunButton
       class="bg-blue-400 text-black hover:bg-blue-300 hover:text-black shadow hover:shadow-none"
       :text="getButtonText('MyResume')"
       direction="rtl"
-      @click="currentNav = 'MyResume'"
+      @click="setNav('MyResume')"
     />
     <FunButton
       class="bg-purple-400 text-black hover:bg-purple-300 hover:text-black shadow hover:shadow-none hidden md:block"
