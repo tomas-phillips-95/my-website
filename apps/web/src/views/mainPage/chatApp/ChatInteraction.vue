@@ -117,7 +117,7 @@ const { dotDotDot } = useDotDotDot(isLoadingResponse);
     <div
       v-show="true"
       ref="questionEl"
-      class="px-4 pb-4 pt-2 flex flex-col bg-[#e5e7eb] w-96 shadow-lg absolute space-y-2 rounded-lg border-2 border-gray-500"
+      class="px-4 pb-4 pt-2 flex flex-col bg-[#e5e7eb] w-96 shadow-lg fixed space-y-2 rounded-lg border-2 border-gray-500"
       :class="{
         'z-50':
           isQuestionElHoveredWithDelayAtEnd || isAnswerElHoveredWithDelayAtEnd,
