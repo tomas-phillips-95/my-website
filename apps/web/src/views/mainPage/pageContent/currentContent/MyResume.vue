@@ -128,7 +128,7 @@ const knownTools = [
     </div>
 
     <div class="flex flex-col">
-      <h3 class="font-medium">Tools I've Worked With:</h3>
+      <h3>Tools I've Worked With:</h3>
       <ul>
         <li v-for="(tool, index) in knownTools" :key="index" class="text-sm">
           {{ tool }}
@@ -136,7 +136,7 @@ const knownTools = [
       </ul>
     </div>
     <div class="space-y-2">
-      <h3 class="font-medium">Experience:</h3>
+      <h3>Experience:</h3>
       <WorkItem
         v-for="(workItem, index) in work"
         :key="index"
@@ -144,7 +144,7 @@ const knownTools = [
       />
     </div>
     <div class="space-y-2">
-      <h3 class="font-medium">Education:</h3>
+      <h3>Education:</h3>
       <EducationItem
         v-for="(educationItem, index) in education"
         :key="index"
