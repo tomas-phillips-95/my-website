@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { useTitle } from "@vueuse/core";
+import { useTitle, useFavicon } from "@vueuse/core";
 
 import ChatApp from "./mainPage/ChatApp.vue";
 import PageContent from "./mainPage/PageContent.vue";
 import HeaderStuff from "./mainPage/HeaderStuff.vue";
 
+import FaviconUrl from "@/assets/peach.ico";
 import { useDimmerState } from "@/composables/dimmer";
 const { dimmed } = useDimmerState();
 
+useFavicon(FaviconUrl);
 useTitle("Tomás Phillips");
 </script>
 
