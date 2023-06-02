@@ -170,7 +170,7 @@ const { dotDotDot } = useDotDotDot(isLoadingResponse);
       <div
         v-show="interaction.state === 'complete'"
         ref="answerEl"
-        class="px-4 pb-4 pt-2 flex flex-col bg-[#e5e7eb] w-80 shadow-lg absolute space-y-2 rounded-lg border-2 border-gray-500"
+        class="px-4 pb-4 pt-2 fixed flex flex-col bg-[#e5e7eb] w-80 shadow-lg space-y-2 rounded-lg border-2 border-gray-500"
         :class="{
           'z-50':
             isQuestionElHoveredWithDelayAtEnd ||
