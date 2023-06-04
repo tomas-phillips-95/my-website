@@ -1,33 +1,16 @@
 <script setup lang="ts">
-import {
-  useTitle,
-  useFavicon,
-  useIntervalFn,
-  useCycleList,
-} from "@vueuse/core";
+import { useTitle, useFavicon } from "@vueuse/core";
 
 import ChatApp from "./mainPage/ChatApp.vue";
 import PageContent from "./mainPage/PageContent.vue";
 import HeaderStuff from "./mainPage/HeaderStuff.vue";
 
-import PeachUrl from "@/assets/peach.ico";
-import AppleUrl from "@/assets/apple.ico";
-import PearUrl from "@/assets/pear.ico";
-import CherryUrl from "@/assets/cherry.ico";
+import FaviconUrl from "@/assets/favicon.ico";
 import { useDimmerState } from "@/composables/dimmer";
 const { dimmed } = useDimmerState();
 
-const { state: faviconUrl, next } = useCycleList([
-  AppleUrl,
-  PeachUrl,
-  PearUrl,
-  CherryUrl,
-]);
-
-useFavicon(faviconUrl);
+useFavicon(FaviconUrl);
 useTitle("Tomás Phillips");
-
-useIntervalFn(next, 5000);
 </script>
 
 <template>
