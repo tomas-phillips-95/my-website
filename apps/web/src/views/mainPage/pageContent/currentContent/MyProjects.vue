@@ -117,10 +117,20 @@ useIntervalFn(() => {
           This is one of the first websites I made when I was applying for my
           first software developer job. It's just plain javascript, HTML, & CSS.
           The cool thing about it is that every time you refresh, the position
-          of the links will move, and a new background will load. The background
-          is randomly retrieved from the Rijksmuseum's API. It's a whole bunch
-          of old, Dutch paintings. If you wait long enough you can see the title
-          of the painting slowly type itself at the bottom.
+          of the menu will move, and a new background will load (click the top
+          left square to see its source). The background is randomly retrieved
+          from the Rijksmuseum's API. It's a whole bunch of old, Dutch
+          paintings. If you wait long enough you can see the title of the
+          painting slowly type itself at the bottom. Also, no, the links don't
+          work.
+        </p>
+        <p class="text-sm max-w-[64%]">
+          I was into functional programming at the time and used an Observable
+          (like jupyter notebooks for js ecosystem) which you can see
+          <ReuseLink
+            text="here"
+            href="https://observablehq.com/@tomashphill/rikjsdata"
+          />.
         </p>
       </div>
     </div>

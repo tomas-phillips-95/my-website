@@ -132,16 +132,6 @@ const [DefineHoverable, ReuseHoverable] = createReusableTemplate<{
           ><template #tooltip>Well that's pretty weird.</template></MyTooltip
         >
       </p>
-      <p class="text-base">
-        —BTW I'm currently reading
-        <a
-          href="https://nostarch.com/book-kubernetes"
-          _target="blank"
-          class="underline"
-          >The Book of Kubernetes</a
-        >
-        by Alan Hohn.
-      </p>
     </div>
   </div>
 </template>
