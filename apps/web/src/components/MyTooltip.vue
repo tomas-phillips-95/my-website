@@ -8,6 +8,10 @@ import {
 } from "@vueuse/core";
 import { ref } from "vue";
 
+import { useBrowser } from "@/composables";
+
+const { isSafari } = useBrowser();
+
 const reference = ref<HTMLElement | null>(null);
 const floating = ref<HTMLElement | null>(null);
 const revealer = ref<HTMLElement | null>(null);
@@ -32,6 +36,7 @@ const { playState, play } = useAnimate(
     immediate: false,
   }
 );
+const hasPlayed = ref(false);
 
 const randomRotation = ref("");
 whenever(isHovering, () => {
@@ -39,7 +44,11 @@ whenever(isHovering, () => {
     Math.random() < 0.5 ? "hover:rotate-6" : "hover:-rotate-6";
 });
 whenever(isHoveringDebounced, () => {
+  if (isSafari.value && hasPlayed.value) {
+    return;
+  }
   play();
+  hasPlayed.value = true;
 });
 </script>
 

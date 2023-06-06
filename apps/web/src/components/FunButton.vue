@@ -4,7 +4,7 @@ import { ref, computed } from "vue";
 
 import MovingBit from "./funButton/MovingBit.vue";
 
-import { useIsMobile, useUserAgent } from "@/composables";
+import { useIsMobile, useBrowser } from "@/composables";
 
 const props = withDefaults(
   defineProps<{
@@ -28,9 +28,9 @@ const multi = computed(() =>
 );
 
 const { isMobile } = useIsMobile();
-const { browser } = useUserAgent();
+const { isChrome } = useBrowser();
 
-const isFun = computed(() => !isMobile.value && browser.name === "Chrome");
+const isFun = computed(() => !isMobile.value && isChrome.value);
 </script>
 
 <template>
