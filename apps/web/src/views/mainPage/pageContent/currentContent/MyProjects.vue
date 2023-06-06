@@ -125,8 +125,9 @@ useIntervalFn(() => {
           work.
         </p>
         <p class="text-sm max-w-[64%]">
-          I was into functional programming at the time and used an Observable
-          (like jupyter notebooks for js ecosystem) which you can see
+          I was into functional programming and data visualization at the time
+          and used an Observable (think jupyter notebooks for js ecosystem)
+          which you can see
           <ReuseLink
             text="here"
             href="https://observablehq.com/@tomashphill/rikjsdata"
