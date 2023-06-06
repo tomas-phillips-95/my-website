@@ -11,11 +11,11 @@ const { currentNav } = useNav();
 
 function getComponent(): Component {
   switch (currentNav.value) {
-    case "AboutMe":
+    case "about-me":
       return AboutMe;
-    case "MyResume":
+    case "my-resume":
       return MyResume;
-    case "MyProjects":
+    case "my-projects":
       return MyProjects;
   }
 }

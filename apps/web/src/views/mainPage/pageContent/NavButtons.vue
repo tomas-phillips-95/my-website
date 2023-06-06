@@ -1,30 +1,32 @@
 <script setup lang="ts">
-import { computed, type UnwrapRef } from "vue";
+import { computed } from "vue";
 import { until, useWindowScroll } from "@vueuse/core";
 
-import FunButton from "@/components/FunButton.vue";
 import { useNav, useIsMobile, useInteractionsStore } from "@/composables";
-const { currentNav } = useNav();
+import FunButton from "@/components/FunButton.vue";
+
 const { isMobile } = useIsMobile();
 const { addNewInteraction } = useInteractionsStore();
 
-type Nav = UnwrapRef<typeof currentNav>;
+const { currentNav, setNav } = useNav();
 
 const { y: scrollY } = useWindowScroll();
 const isScrollTop = computed(() => scrollY.value === 0);
+
+type Nav = "about-me" | "my-projects" | "my-resume";
 
 const getButtonText = computed(() => {
   return isMobile.value
     ? (nav: Nav) => {
         let text: string;
         switch (nav) {
-          case "AboutMe":
+          case "about-me":
             text = "About me";
             break;
-          case "MyProjects":
+          case "my-projects":
             text = "Projects";
             break;
-          case "MyResume":
+          case "my-resume":
             text = "Resume";
             break;
         }
@@ -33,13 +35,13 @@ const getButtonText = computed(() => {
     : (nav: Nav) => {
         let text: string;
         switch (nav) {
-          case "AboutMe":
+          case "about-me":
             text = "About me";
             break;
-          case "MyProjects":
+          case "my-projects":
             text = "My projects";
             break;
-          case "MyResume":
+          case "my-resume":
             text = "My resume";
             break;
         }
@@ -47,10 +49,10 @@ const getButtonText = computed(() => {
       };
 });
 
-async function setNav(nav: Nav) {
+async function buttonSetNav(nav: Nav) {
   window.scrollTo({ top: 0, behavior: "smooth" });
   await until(isScrollTop).toBe(true);
-  currentNav.value = nav;
+  setNav(nav);
 }
 </script>
 
@@ -58,21 +60,21 @@ async function setNav(nav: Nav) {
   <div class="flex space-x-2">
     <FunButton
       class="bg-green-400 text-black hover:bg-green-300 hover:text-black shadow hover:shadow-none"
-      :text="getButtonText('AboutMe')"
+      :text="getButtonText('about-me')"
       direction="rtl"
-      @click="setNav('AboutMe')"
+      @click="buttonSetNav('about-me')"
     />
     <FunButton
       class="bg-yellow-400 text-black hover:bg-yellow-300 hover:text-black shadow hover:shadow-none"
-      :text="getButtonText('MyProjects')"
+      :text="getButtonText('my-projects')"
       direction="ltr"
-      @click="setNav('MyProjects')"
+      @click="buttonSetNav('my-projects')"
     />
     <FunButton
       class="bg-blue-400 text-black hover:bg-blue-300 hover:text-black shadow hover:shadow-none"
-      :text="getButtonText('MyResume')"
+      :text="getButtonText('my-resume')"
       direction="rtl"
-      @click="setNav('MyResume')"
+      @click="buttonSetNav('my-resume')"
     />
     <FunButton
       class="bg-purple-400 text-black hover:bg-purple-300 hover:text-black shadow hover:shadow-none hidden md:block"

@@ -4,8 +4,6 @@ import { track } from "@vercel/analytics";
 import WorkItem from "./MyResume/WorkItem.vue";
 import EducationItem from "./MyResume/EducationItem.vue";
 
-import pdfUrl from "@/assets/resume.pdf";
-
 const work = [
   {
     company: "Infinia ML",
@@ -113,12 +111,11 @@ function logResumePdfClick() {
   <div class="flex flex-col space-y-8 max-w-[64rem]">
     <div class="text-gray-800 text-sm">
       For a PDF version of this, click
-      <a
-        :href="pdfUrl"
-        target="_blank"
+      <RouterLink
+        :to="{ name: 'my-resume-pdf' }"
         class="transition text-black underline hover:bg-white hover:shadow-[0_0_15px_15px_white] inline-block rounded-[100%] duration-500"
         @click="logResumePdfClick()"
-        >here</a
+        >here</RouterLink
       >.
     </div>
 

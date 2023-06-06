@@ -1,11 +1,19 @@
-import { createGlobalState } from "@vueuse/core";
-import { useRouteQuery } from "@vueuse/router";
+import { createGlobalState, toRefs } from "@vueuse/core";
+import type { Ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
-type NavOption = "AboutMe" | "MyProjects" | "MyResume";
+type NavOption = "about-me" | "my-projects" | "my-resume";
 
 export const useNav = createGlobalState(() => {
-  const currentNav = useRouteQuery<NavOption>("selected", "AboutMe");
+  const { push } = useRouter();
+  const { name: currentNav } = toRefs(useRoute());
+
+  function setNav(nav: NavOption) {
+    push({ name: nav });
+  }
+
   return {
-    currentNav,
+    currentNav: currentNav as Ref<NavOption>,
+    setNav,
   };
 });
