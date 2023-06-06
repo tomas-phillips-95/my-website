@@ -4,7 +4,7 @@ import { ref, computed } from "vue";
 
 import MovingBit from "./funButton/MovingBit.vue";
 
-import { useIsMobile } from "@/composables/isMobile";
+import { useIsMobile, useUserAgent } from "@/composables";
 
 const props = withDefaults(
   defineProps<{
@@ -28,20 +28,29 @@ const multi = computed(() =>
 );
 
 const { isMobile } = useIsMobile();
+const { browser } = useUserAgent();
+
+const isFun = computed(() => !isMobile.value && browser.name === "Chrome");
 </script>
 
 <template>
   <button
     ref="button"
-    class="rounded-lg w-max group my-1 duration-300 whitespace-nowrap hover:my-0 relative overflow-hidden transition-all hover:rounded-[100%]"
+    class="rounded-lg w-max group my-1 whitespace-nowrap duration-300 relative overflow-hidden hover:rounded-[100%]"
+    :class="{
+      'hover:my-0': isFun,
+    }"
   >
     <div
-      class="relative mx-3 my-2 group-hover:my-3 inline-block transition-all duration-300"
+      class="relative mx-3 my-2 inline-block duration-300"
+      :class="{
+        'group-hover:my-3': isFun,
+      }"
     >
-      <div :class="isMobile ? '' : isOutsideButton ? '' : 'invisible'">
+      <div :class="!isFun ? '' : isOutsideButton ? '' : 'invisible'">
         {{ text }}
       </div>
-      <div v-if="!isMobile && !isOutsideButton">
+      <div v-if="isFun && !isOutsideButton">
         <MovingBit
           v-for="(m, index) in multi"
           :key="index"

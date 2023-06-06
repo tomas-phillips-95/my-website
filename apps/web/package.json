@@ -16,11 +16,13 @@
     "immer": "^10.0.2",
     "lodash-es": "^4.17.21",
     "nanoid": "^4.0.2",
+    "ua-parser-js": "^1.0.35",
     "vue": "^3.2.45",
     "vue-router": "^4.2.1"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
+    "@types/ua-parser-js": "^0.7.36",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",
