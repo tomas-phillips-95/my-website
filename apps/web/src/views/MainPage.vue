@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useTitle, useFavicon } from "@vueuse/core";
+import { provide, ref } from "vue";
 
 import ChatApp from "./mainPage/ChatApp.vue";
 import PageContent from "./mainPage/PageContent.vue";
@@ -12,11 +13,17 @@ const { dimmed } = useDimmerState();
 
 useFavicon(FaviconUrl);
 useTitle("Tomás Phillips");
+
+const scrollContainer = ref<HTMLElement | null>();
+provide("scrollContainer", scrollContainer);
 </script>
 
 <template>
   <div class="absolute top-0 left-0 h-screen w-screen p-3 bg-gray-400">
-    <div class="h-full w-full overflow-y-scroll bg-gray-200">
+    <div
+      ref="scrollContainer"
+      class="h-full w-full overflow-y-scroll bg-gray-200"
+    >
       <div class="flex flex-col p-6">
         <HeaderStuff class="flex-initial pb-3" />
         <NavButtons

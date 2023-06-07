@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { until, useWindowScroll } from "@vueuse/core";
+import { computed, inject } from "vue";
+import { until, useScroll } from "@vueuse/core";
 
 import { useNav, useIsMobile, useInteractionsStore } from "@/composables";
 import FunButton from "@/components/FunButton.vue";
@@ -10,7 +10,8 @@ const { addNewInteraction } = useInteractionsStore();
 
 const { currentNav, setNav } = useNav();
 
-const { y: scrollY } = useWindowScroll();
+const scrollContainer = inject<HTMLElement | null>("scrollContainer");
+const { y: scrollY } = useScroll(scrollContainer, { behavior: "smooth" });
 const isScrollTop = computed(() => scrollY.value === 0);
 
 type Nav = "about-me" | "my-projects" | "my-resume";
@@ -50,7 +51,7 @@ const getButtonText = computed(() => {
 });
 
 async function buttonSetNav(nav: Nav) {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  scrollY.value = 0;
   await until(isScrollTop).toBe(true);
   setNav(nav);
 }
