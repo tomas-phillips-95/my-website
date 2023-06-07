@@ -19,7 +19,9 @@ provide("scrollContainer", scrollContainer);
 </script>
 
 <template>
-  <div class="absolute top-0 left-0 h-screen w-screen p-3 bg-gray-400">
+  <div
+    class="absolute top-0 left-0 h-screen w-screen p-3 bg-gray-400 leading-6"
+  >
     <div
       ref="scrollContainer"
       class="h-full w-full overflow-y-scroll bg-gray-200"
