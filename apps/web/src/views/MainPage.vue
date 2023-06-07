@@ -4,6 +4,7 @@ import { useTitle, useFavicon } from "@vueuse/core";
 import ChatApp from "./mainPage/ChatApp.vue";
 import PageContent from "./mainPage/PageContent.vue";
 import HeaderStuff from "./mainPage/HeaderStuff.vue";
+import NavButtons from "./mainPage/NavButtons.vue";
 
 import FaviconUrl from "@/assets/favicon.ico";
 import { useDimmerState } from "@/composables/dimmer";
@@ -15,9 +16,11 @@ useTitle("Tomás Phillips");
 
 <template>
   <div class="flex flex-col p-6">
-    <HeaderStuff class="flex-initial mb-5" />
-    <hr class="border-1 border-gray-300 z-10" />
-    <div class="flex flex-1 bg-gray-200">
+    <HeaderStuff class="flex-initial pb-3" />
+    <NavButtons
+      class="sticky top-0 py-3 border-y border-gray-300 bg-gray-200"
+    />
+    <div class="flex flex-1 bg-gray-200 pt-3">
       <PageContent class="flex-1" />
       <ChatApp />
     </div>
