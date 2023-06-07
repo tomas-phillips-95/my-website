@@ -15,26 +15,33 @@ useTitle("Tomás Phillips");
 </script>
 
 <template>
-  <div class="flex flex-col p-6">
-    <HeaderStuff class="flex-initial pb-3" />
-    <NavButtons
-      class="sticky top-0 py-3 border-y border-gray-300 bg-gray-200"
-    />
-    <div class="flex flex-1 bg-gray-200 pt-3">
-      <PageContent class="flex-1" />
-      <ChatApp />
+  <div class="absolute top-0 left-0 h-screen w-screen p-3 bg-gray-400">
+    <div class="h-full w-full overflow-y-scroll bg-gray-200">
+      <div class="flex flex-col p-6">
+        <HeaderStuff class="flex-initial pb-3" />
+        <NavButtons
+          class="sticky top-0 py-3 border-y border-gray-300 bg-gray-200"
+        />
+        <div class="flex flex-1 bg-gray-200 pt-3">
+          <PageContent class="flex-1" />
+          <ChatApp />
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="opacity-20">
-    <Transition
-      enter-active-class="transition-opacity duration-300 ease-in"
-      enter-from-class="opacity-0"
-      enter-to-class="opacity-100"
-      leave-active-class="transition-opacity duration-400 ease-in"
-      leave-from-class="opacity-100"
-      leave-to-class="opacity-0"
-    >
-      <div v-if="dimmed" class="fixed w-full h-full bg-gray-600 top-0 left-0" />
-    </Transition>
+    <div class="opacity-20">
+      <Transition
+        enter-active-class="transition-opacity duration-300 ease-in"
+        enter-from-class="opacity-0"
+        enter-to-class="opacity-100"
+        leave-active-class="transition-opacity duration-400 ease-in"
+        leave-from-class="opacity-100"
+        leave-to-class="opacity-0"
+      >
+        <div
+          v-if="dimmed"
+          class="fixed w-full h-full bg-gray-600 top-0 left-0"
+        />
+      </Transition>
+    </div>
   </div>
 </template>

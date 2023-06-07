@@ -59,25 +59,25 @@ async function buttonSetNav(nav: Nav) {
 <template>
   <div class="flex space-x-2">
     <FunButton
-      class="bg-green-400 text-black hover:bg-green-300 hover:text-black shadow hover:shadow-none"
+      class="bg-green-400 text-black hover:bg-green-300 hover:text-black shadow-md hover:shadow-none"
       :text="getButtonText('about-me')"
       direction="rtl"
       @click="buttonSetNav('about-me')"
     />
     <FunButton
-      class="bg-yellow-400 text-black hover:bg-yellow-300 hover:text-black shadow hover:shadow-none"
+      class="bg-yellow-400 text-black hover:bg-yellow-300 hover:text-black shadow-md hover:shadow-none"
       :text="getButtonText('my-projects')"
       direction="ltr"
       @click="buttonSetNav('my-projects')"
     />
     <FunButton
-      class="bg-blue-400 text-black hover:bg-blue-300 hover:text-black shadow hover:shadow-none"
+      class="bg-blue-400 text-black hover:bg-blue-300 hover:text-black shadow-md hover:shadow-none"
       :text="getButtonText('my-resume')"
       direction="rtl"
       @click="buttonSetNav('my-resume')"
     />
     <FunButton
-      class="bg-purple-400 text-black hover:bg-purple-300 hover:text-black shadow hover:shadow-none hidden md:block"
+      class="bg-purple-400 text-black hover:bg-purple-300 hover:text-black shadow-md hover:shadow-none hidden md:block"
       text="+ ?"
       direction="ltr"
       @click="addNewInteraction()"
