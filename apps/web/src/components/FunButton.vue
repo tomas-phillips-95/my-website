@@ -13,7 +13,7 @@ const props = withDefaults(
     direction?: "ltr" | "rtl";
   }>(),
   {
-    totalWords: 6,
+    totalWords: 8,
     direction: "ltr",
   }
 );
