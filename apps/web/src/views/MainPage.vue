@@ -17,7 +17,7 @@ useTitle("Tomás Phillips");
   <div class="flex flex-col p-6">
     <HeaderStuff class="flex-initial mb-3" />
     <hr class="border-1 border-gray-300 z-10" />
-    <div class="flex flex-1 bg-gray-200 mt-3">
+    <div class="flex flex-1 bg-gray-200">
       <PageContent class="flex-1" />
       <ChatApp />
     </div>
