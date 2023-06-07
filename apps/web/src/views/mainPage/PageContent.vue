@@ -6,8 +6,8 @@ import CurrentContent from "./pageContent/CurrentContent.vue";
 <template>
   <div class="space-y-4">
     <NavButtons
-      class="sticky top-0 bg-[#e5e7eb] shadow-[0_0_15px_15px_#e5e7eb] py-2"
+      class="sticky top-0 bg-[#e5e7eb] shadow-[0_0_15px_15px_#e5e7eb]"
     />
-    <CurrentContent />
+    <CurrentContent class="max-w-[48rem]" />
   </div>
 </template>

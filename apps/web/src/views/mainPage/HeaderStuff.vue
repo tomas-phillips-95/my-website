@@ -1,3 +1,4 @@
+1
 <script setup lang="ts">
 import { createReusableTemplate } from "@vueuse/core";
 
@@ -17,13 +18,15 @@ const [DefineLink, ReuseLink] = createReusableTemplate<{
 
     <header class="flex justify-between">
       <h1><a href="/">Tomás Phillips</a></h1>
-      <div class="flex flex-col">
-        <h1 class="text-right mb-2 select-none relative">Contact</h1>
-        <ReuseLink text="Email" href="mailto:tomas.phillips.95@gmail.com" />
+      <div class="flex space-x-1.5">
+        <ReuseLink
+          text="Email"
+          href="mailto:tomas.phillips.95@gmail.com"
+        /><span>·</span>
         <ReuseLink
           text="LinkedIn"
           href="https://www.linkedin.com/in/tomas-phillips"
-        />
+        /><span>·</span>
         <ReuseLink
           text="Github"
           href="https://www.github.com/tomas-phillips-95"
