@@ -8,7 +8,9 @@ import HeaderStuff from "./mainPage/HeaderStuff.vue";
 import NavButtons from "./mainPage/NavButtons.vue";
 
 import FaviconUrl from "@/assets/favicon.ico";
-import { useDimmerState } from "@/composables/dimmer";
+import { useDimmerState, useBorderColor } from "@/composables";
+
+const { borderColor } = useBorderColor();
 const { dimmed } = useDimmerState();
 
 useFavicon(FaviconUrl);
@@ -20,18 +22,19 @@ provide("scrollContainer", scrollContainer);
 
 <template>
   <div
-    class="absolute top-0 left-0 h-screen w-screen p-3 bg-gray-400 leading-6"
+    class="absolute top-0 left-0 h-screen w-screen p-2 md:p-3 leading-6 overflow-hidden transition-colors duration-500"
+    :class="borderColor"
   >
     <div
       ref="scrollContainer"
       class="h-full w-full overflow-y-scroll bg-gray-200"
     >
-      <div class="flex flex-col p-6">
-        <HeaderStuff class="flex-initial pb-3" />
+      <div class="flex flex-col p-6 md:p-8">
+        <HeaderStuff class="flex-initial pb-3 md:pb-4" />
         <NavButtons
-          class="sticky top-0 py-3 border-y border-gray-300 bg-gray-200"
+          class="sticky top-0 py-3 md:py-4 border-y border-gray-300 bg-gray-200"
         />
-        <div class="flex flex-1 bg-gray-200 pt-3">
+        <div class="flex flex-1 bg-gray-200 pt-3 md:pt-4">
           <PageContent class="flex-1" />
           <ChatApp />
         </div>
