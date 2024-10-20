@@ -15,7 +15,7 @@ const [DefineHoverable, ReuseHoverable] = createReusableTemplate<{
     </DefineHoverable>
 
     <div class="text-gray-600 max-w-[42rem] space-y-4">
-      <p class="border border-gray-300 p-4 mb-4 text-sm rounded-md bg-gray-100 -translate-x-2">
+      <p class="border border-gray-300 py-4 px-6 mb-4 text-sm rounded-md bg-gray-100">
         <span class="text-green-700 font-medium block mb-2">Update Oct. 2024:</span>
         Over a year has passed since I last updated this page. I've learned a lot since then, specifically
         in the realm of React Native development and LLMs. "chat with me" no longer works (sorry, although you can still see its cute interface).
@@ -23,7 +23,6 @@ const [DefineHoverable, ReuseHoverable] = createReusableTemplate<{
         new composer feature automates a lot of boilerplate (slightly scared this is making me a lazier developer).
         Other life changes include moving to NYC.
       </p>
-
       <p>
         Hi, I'm
         <MyTooltip><template #content>
