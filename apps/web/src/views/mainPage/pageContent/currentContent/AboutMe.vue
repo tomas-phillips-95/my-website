@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useTimeAgo, createReusableTemplate } from "@vueuse/core";
-
 import MyTooltip from "@/components/MyTooltip.vue";
 
 const timeAgo = useTimeAgo(new Date(1995, 8, 2), { rounding: "floor" });
@@ -15,27 +14,32 @@ const [DefineHoverable, ReuseHoverable] = createReusableTemplate<{
       <span class="font-medium text-black cursor-default">{{ text }}</span>
     </DefineHoverable>
 
-    <div class="text-gray-700 max-w-[42rem] space-y-4">
+    <div class="text-gray-600 max-w-[42rem] space-y-4">
+      <p class="border border-gray-300 p-4 mb-4 text-sm rounded-md bg-gray-100 -translate-x-2">
+        <span class="text-green-700 font-medium block mb-2">Update Oct. 2024:</span>
+        Over a year has passed since I last updated this page. I've learned a lot since then, specifically
+        in the realm of React Native development and LLMs. Surely the "chat with me" feature needs an update.
+        I've also started using Cursor as my IDE. It's copilot is leagues better than GitHub's, and its
+        new composer feature automates a lot of boilerplate (slightly scared this is making me a lazier developer).
+        Other life changes include moving to NYC.
+      </p>
+
       <p>
         Hi, I'm
-        <MyTooltip
-          ><template #content><ReuseHoverable text="Tomás." /></template
-          ><template #tooltip
-            >Born {{ timeAgo }} in Curitiba, Brazil.</template
-          ></MyTooltip
-        >
+        <MyTooltip><template #content>
+            <ReuseHoverable text="Tomás." />
+          </template><template #tooltip>Born {{ timeAgo }} in Curitiba, Brazil.</template></MyTooltip>
         I currently work full-time as a full-stack developer at a small startup.
         I've mostly done backend work, but recently I've been heavily involved
         with a frontend project... so I've done a lot of Vue 3 and
-        <MyTooltip
-          ><template #content><ReuseHoverable text="Typescript" /></template
-          ><template #tooltip>Go types!</template></MyTooltip
-        >
+        <MyTooltip><template #content>
+            <ReuseHoverable text="Typescript" />
+          </template><template #tooltip>Go types!</template>
+        </MyTooltip>
         programming lately, and wanted to
-        <MyTooltip
-          ><template #content><ReuseHoverable text="zhuzh" /></template
-          ><template #tooltip
-            ><span class="italic text-xs text-gray-500">verb</span>
+        <MyTooltip><template #content>
+            <ReuseHoverable text="zhuzh" />
+          </template><template #tooltip><span class="italic text-xs text-gray-500">verb</span>
             <div class="ml-4">
               <p class="text-sm">
                 make something more stylish, lively, or attractive.
@@ -44,57 +48,45 @@ const [DefineHoverable, ReuseHoverable] = createReusableTemplate<{
                 "the bag is a cool but economical way to zhuzh up many an
                 outfit"
               </p>
-            </div></template
-          ></MyTooltip
-        >
+            </div>
+          </template></MyTooltip>
         up my personal website after learning all that I did.
       </p>
       <p>
         I first went to college at
-        <MyTooltip
-          ><template #content
-            ><ReuseHoverable text="UNC Chapel Hill" /></template
-          ><template #tooltip>Go Tar Heels!</template></MyTooltip
-        >
+        <MyTooltip><template #content>
+            <ReuseHoverable text="UNC Chapel Hill" />
+          </template><template #tooltip>Go Tar Heels!</template></MyTooltip>
         where I studied computer science for a bit... then got a little lost and
         switched to an art major, then transferred to
-        <MyTooltip
-          ><template #content><ReuseHoverable text="UNC Greensboro" /></template
-          ><template #tooltip>Go Spartans!</template></MyTooltip
-        >, and then attended
-        <MyTooltip
-          ><template #content><ReuseHoverable text="Lambda School" /></template
-          ><template #tooltip
-            >Now rebranded as Bloomtech. There's a lot of controversy
-            surrounding the school. 👀 Google if you're curious.</template
-          ></MyTooltip
-        >
+        <MyTooltip><template #content>
+            <ReuseHoverable text="UNC Greensboro" />
+          </template><template #tooltip>Go Spartans!</template></MyTooltip>, and then attended
+        <MyTooltip><template #content>
+            <ReuseHoverable text="Lambda School" />
+          </template><template #tooltip>Now rebranded as Bloomtech. There's a lot of controversy
+            surrounding the school. 👀 Google if you're curious.</template></MyTooltip>
         coding bootcamp for data science.
       </p>
       <p>
         Since LLMs and ChatGPT are all the rage now, I made a little chat app on
         this page where you can
-        <MyTooltip
-          ><template #content><ReuseHoverable text='"chat with me"' /></template
-          ><template #tooltip
-            ><span class="text-xs italic">Spolier alert:</span><br />It's not
-            really me.</template
-          ></MyTooltip
-        >
+        <MyTooltip><template #content>
+            <ReuseHoverable text='"chat with me"' />
+          </template><template #tooltip><span class="text-xs italic">Spolier alert:</span><br />It's not
+            really me.</template></MyTooltip>
         and learn a little more about me.
       </p>
       <p>
         Ok, so since I'm working in VS Code with
-        <MyTooltip
-          ><template #content
-            ><ReuseHoverable text="GitHub Copilot," /></template
-          ><template #tooltip
-            ><p class="text-sm italic">
+        <MyTooltip><template #content>
+            <ReuseHoverable text="GitHub Copilot," />
+          </template><template #tooltip>
+            <p class="text-sm italic">
               » "Say hi to the person reading this right now, GitHub Copilot!" «
             </p>
             <p class="text-sm italic text-right">» "Hi there! 👋" «</p>
-          </template></MyTooltip
-        >
+          </template></MyTooltip>
         I'm now going to let it autocomplete the rest of my "About Me", let's
         see how it does:
       </p>
@@ -126,11 +118,8 @@ const [DefineHoverable, ReuseHoverable] = createReusableTemplate<{
       </p>
 
       <p class="text-lg">
-        <MyTooltip
-          ><template #content
-            ><span class="cursor-default text-xl">😳</span></template
-          ><template #tooltip>Well that's pretty weird.</template></MyTooltip
-        >
+        <MyTooltip><template #content><span class="cursor-default text-xl">😳</span></template><template #tooltip>Well
+            that's pretty weird.</template></MyTooltip>
       </p>
     </div>
   </div>

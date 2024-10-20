@@ -5,12 +5,24 @@ import WorkItem from "./MyResume/WorkItem.vue";
 import EducationItem from "./MyResume/EducationItem.vue";
 
 const work = [
+{
+    company: "Bionic Health",
+    location: "Research Triangle Park NC (remote)",
+    title: "Software Engineer",
+    startDate: "July 2023",
+    endDate: "Present",
+    bulletPoints: [
+      "Developed an EHR system and member application using React Native, Typescript, Expo, and Django.",
+      "Wore many hats, including frontend, backend, and infra work.",
+      "Worked with AI, including incorporating it into my daily workflow."
+    ],
+  },
   {
     company: "Infinia ML",
     location: "Durham NC",
     title: "Software Engineer",
     startDate: "March 2022",
-    endDate: "Present",
+    endDate: "July 2023",
     bulletPoints: [
       "Developed and maintained a user management system using Python (backend) and Vue 3 with TypeScript (frontend).",
       "Collaborated with data scientists to deploy intelligent document processing engines for clients.",
@@ -100,6 +112,9 @@ const knownTools = [
   "MongoDB",
   "Keycloak",
   "AWS",
+  "React",
+  "React Native (Expo)",
+  "AI (LLMs, Frameworks, etc.)",
 ];
 
 function logResumePdfClick() {
