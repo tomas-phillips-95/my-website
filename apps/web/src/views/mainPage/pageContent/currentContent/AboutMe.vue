@@ -18,7 +18,7 @@ const [DefineHoverable, ReuseHoverable] = createReusableTemplate<{
       <p class="border border-gray-300 p-4 mb-4 text-sm rounded-md bg-gray-100 -translate-x-2">
         <span class="text-green-700 font-medium block mb-2">Update Oct. 2024:</span>
         Over a year has passed since I last updated this page. I've learned a lot since then, specifically
-        in the realm of React Native development and LLMs. Surely the "chat with me" feature needs an update.
+        in the realm of React Native development and LLMs. "chat with me" no longer works (sorry, although you can still see its cute interface).
         I've also started using Cursor as my IDE. It's copilot is leagues better than GitHub's, and its
         new composer feature automates a lot of boilerplate (slightly scared this is making me a lazier developer).
         Other life changes include moving to NYC.
